@@ -1,12 +1,60 @@
 {% extends "_base.html" %}
-
+{% block css %}
+<link rel="stylesheet" href="css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+{% endblock %}
+{% block scripts %}
+<script src="js/app.js"></script>
+{% endblock %}
 {% block content %}
 <div class="container">
-  <div class="jumbotron">
-    <h1>Welcome to your new project!</h1>
-    <p>Replace this message with your own content in <code>{{ PROJECT_PATH }}/index.html</code>.</p>
-    <p>Learn more on the <a href="_example.html">example page</a>.</p>
-  </div>
+  	<h1>{{ intro_hed }}</h1>
+  	<div class="option choose-grade">
+	  	<h2 class="choice">{{ choose_grade }}</h2>
+	  	<div class="grouped-boxes">
+	  		<div class="grade-box box col-md-3" id="grade-one">{{ grade_block_one }}</div>
+	  		<div class="col-md-1"></div>
+	  		<div class="grade-box box col-md-3" id="grade-two">{{ grade_block_two }}</div>
+	  		<div class="col-md-1"></div>
+	  		<div class="grade-box box col-md-3" id="grade-three">{{ grade_block_three }}</div>
+	  	</div>
+  	</div>
+  	<div class="option choose-tech-access">
+	  	<h2 class="choice">{{ choose_tech_access }}</h2>
+	  	<div class="grouped-boxes">
+	  		<div class="tech-access-box box col-md-5" id="tech-one">{{ tech_access_one }}</div>
+	  		<div class="col-md-1"></div>
+	  		<div class="tech-access-box box col-md-5" id="tech-two">{{ tech_access_two }}</div>
+	  	</div>
+  	</div>
+  	{#
+  	<div class="option choose-class-time">
+	  	<h2 class="choice">{{ choose_class_time }}</h2>
+	  	<div class="grouped-boxes">
+	  		<div class="class-time-box box col-md-5" id="class-one">{{ class_time_one }}</div>
+	  		<div class="col-md-1"></div>
+	  		<div class="class-time-box box col-md-5" id="class-two">{{ class_time_two }}</div>
+	  	</div>
+  	</div>
+  	#}
+  	<div class="option schedules">
+	  	<h2 class="choice">{{ best_fit }}</h2>
+	  	<div class="grouped-boxes">
+	  	{% for schedule in options %}
+		  	<div class="schedule-box box col-md-11" id="schedule-{{ schedule.number }}">
+		  		<h3>{{ schedule.title|process_text }}</h3>
+		  		<span class="expand">expand</span>
+		  		<!-- <p>If you teach {{ schedule.grades }} grade classes with {{ schedule.tech }} for {{ schedule.time }}-minute blocks, we recommend the following classroom model to ensure your students' continued success.</p> -->
+		  	</div>
+		  	<div class="col-md-1"></div>
+		  {% endfor %}
+	  	</div>
+  	</div>
+  	<div class="repeat">
+  		<i class="fa fa-repeat fa-3x" aria-hidden="true"></i>
+  	</div>
+
 </div>
 {% endblock content %}
 

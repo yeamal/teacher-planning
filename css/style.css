@@ -1,0 +1,101 @@
+html, body, .schedule-box {
+	font-family: 'Roboto', sans-serif;
+}
+
+.choose-tech-access, .choose-class-time, .schedules {
+	display: none;
+}
+
+.expand {
+	text-align: center;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.grade-box.clicked, .tech-access-box.clicked {
+	background-color: #186bb3;
+	border: 4px solid #186bb3;
+}
+
+.grade-box.clicked:hover, .tech-access-box.clicked:hover {
+	background-color: #186bb3;
+	border: 4px solid #186bb3;
+	cursor: default;
+}
+
+.grade-box, .tech-access-box, .class-time-box {
+	border-radius: 5px;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+	padding: 10px;
+	font-size: 20px;
+	background-color: #96bfec;
+	color: white;
+	border: 4px solid #96bfec;
+
+}
+
+.grade-box:hover, .tech-access-box:hover, .class-time-box:hover, .schedule-box, .fa-repeat:hover {
+	background-color: #3582dc;
+	border: 4px solid #3582dc;
+	cursor: pointer;
+}
+
+.grouped-boxes {
+	overflow: auto;
+	margin: 20px 0 0 0;
+	background-color: white;
+}
+
+h1 {
+	font-size: 2.5em;
+	font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+	font-weight: 400;
+	margin: 0;
+	font-size: 24px;
+}
+
+h3 {
+	margin: 5px 0 5px 0;
+	font-size: 20px;
+}
+
+.option {
+	margin: 30px 0 50px 0;
+}
+
+p {
+	font-size: 16px;
+}
+
+.repeat {
+	width: 100%;
+    text-align: center;
+}
+
+.schedule-box {
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;
+	background-color: #d6e5f7;
+	border: 4px solid #d6e5f7;
+	color: black;
+	display: none;
+	padding: 10px;
+	margin: 20px 0 5px 0;
+}
+
+.schedule-box:hover {
+	cursor: default;
+}
+
+.schedule-box h3 {
+	text-align: center;
+}
+
+
